@@ -1,9 +1,8 @@
 # RiskRadar - S&P Global & Crisil Campus Hackathon
 
 **Candidate Name:** Aarohi Chadha  
-**College Email ID:** PENDING - supply actual college email before submission  
-**College / Campus:** Indira Gandhi Delhi Technical University for Women (IGDTUW)  
-**Demo Video Link:** PENDING - upload the 10-minute screen recording to YouTube as Unlisted  
+**College Email ID:** aarohi003btcseai23@igdtuw.ac.in
+**College / Campus:** Indira Gandhi Delhi Technical University for Women (IGDTUW)    
 **Slide Deck:** [PDF](docs/presentation.pdf) or [PPTX](docs/RiskRadar-Presentation.pptx)  
 **Live Dashboard:** https://aarohichadha.github.io/igdtuw-aarohi-chadha-hackathon/
 
