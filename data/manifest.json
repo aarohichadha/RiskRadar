@@ -1,0 +1,47 @@
+{
+  "publisher_revision": "ccbe24de388e287beb92dd393a335c376b350ac3",
+  "train_count": 9374,
+  "evaluation_count": 2318,
+  "files": [
+    {
+      "path": "raw/sent_train.csv",
+      "sha256": "71aa99d0d37feced03c999ec23b5b25302c92f39d69b6acb0a37aa076c5420e8"
+    },
+    {
+      "path": "raw/sent_valid.csv",
+      "sha256": "31ea8274c98b52212daa68f2fb962811bf1913c1efe51b99765c8e2311806de6"
+    },
+    {
+      "path": "sentiment-train.json",
+      "sha256": "78c8cd229e9aa896e2c788b4121b1dcae9a546b203837f44baf032f183f8e6f7"
+    },
+    {
+      "path": "sentiment-evaluation.json",
+      "sha256": "3e2f886e9b1d8cb70b2b766f6c3e0fab711c5f5b722d2d13853795113a6f3474"
+    },
+    {
+      "path": "portfolio.json",
+      "sha256": "70b0f97cec4fba98df8cc037edc0c28af43deca9026760cf9f1501a037b4b1f8"
+    },
+    {
+      "path": "replay.json",
+      "sha256": "ce9a456a29005d182c3785b91e3927947897911aee91698278873c5528b91e25"
+    },
+    {
+      "path": "model.json.gz",
+      "sha256": "b716926e3be2864d995562d9400cc063e150302ff0964a9ba831ec26873cacc6"
+    },
+    {
+      "path": "evaluation.json",
+      "sha256": "b1efac7d15a2f6a05b667110f0514a1f3472ced5306aebc53e58caf8b3cc0e92"
+    },
+    {
+      "path": "demo-results.json",
+      "sha256": "d891eb4909f1986443bf4974dd3ff077b25bb42b96160f959ef7ffbfa5a70de4"
+    }
+  ],
+  "live_sources": {
+    "bbc": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "guardian": "https://www.theguardian.com/business/rss"
+  }
+}

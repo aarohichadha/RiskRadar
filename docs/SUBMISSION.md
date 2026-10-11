@@ -1,26 +1,28 @@
-# Final submission materials
+# Submission checklist
 
-Author: Aarohi Chadha (`aarohichadha`).
+Candidate: Aarohi Chadha, IGDTUW.
 
-1. Public source repository: https://github.com/aarohichadha/RiskRadar
-2. Public demonstration dashboard: https://aarohichadha.github.io/RiskRadar/
-3. Seven-slide presentation: docs/RiskRadar-Presentation.pptx in the repository.
-4. Live demonstration: follow docs/DEMO.md and stay within five minutes.
+- Public repository: https://github.com/aarohichadha/igdtuw-aarohi-chadha-hackathon
+- Deck PDF: docs/presentation.pdf. Editable version: docs/RiskRadar-Presentation.pptx.
+- Architecture: docs/architecture.png and editable docs/architecture.svg, embedded in README.
+- Code, runtime dependencies and exact Quickstart: repository root.
+- Data: original publisher CSVs, cleaned train/evaluation JSON, model, synthetic portfolio/replay and output fixtures under /data, with hashes and attribution.
+- MIT LICENSE for original project code, plus third-party notices.
+- Required README structure and AI assistance disclosure.
+- **PENDING:** actual college email in README.
+- **PENDING:** real 10-minute screen recording uploaded to YouTube as Unlisted, watch URL in README and submission form. Use VIDEO-WALKTHROUGH.md.
+- If shortlisted: attend scheduled live jury pitch and Q&A. Use the five-minute flow in DEMO.md. No separate booking required.
 
-The downloadable ZIP is a backup. It does not replace the public source repository.
+## Answer-box draft
 
-## Answer-box text
+RiskRadar - S&P Global & Crisil Campus Hackathon
+Candidate: Aarohi Chadha, IGDTUW
 
-RiskRadar is an AI/NLP financial risk platform that ingests live text from BBC Business and Guardian Business RSS. It outputs a sentiment score, event category and heuristic impact score as JSON, then demonstrates tactical index rebalancing and portfolio stress testing.
+GitHub: https://github.com/aarohichadha/igdtuw-aarohi-chadha-hackathon
+Live dashboard: https://aarohichadha.github.io/igdtuw-aarohi-chadha-hackathon/
+Deck: https://github.com/aarohichadha/igdtuw-aarohi-chadha-hackathon/blob/main/docs/presentation.pdf
+Demo video: REPLACE WITH ACTUAL UNLISTED YOUTUBE WATCH URL
 
-Source code: https://github.com/aarohichadha/RiskRadar
-Live dashboard: https://aarohichadha.github.io/RiskRadar/
-Presentation: https://github.com/aarohichadha/RiskRadar/blob/main/docs/RiskRadar-Presentation.pptx
+RiskRadar ingests live text from BBC Business and Guardian Business, emits sentiment/event/heuristic impact as JSON, and demonstrates both mock index rebalancing and portfolio stress testing. Real labeled financial tweets train sentiment. All fixed input data and synthetic portfolio/replay fixtures are included with provenance. Accuracy is 82.05% and macro-F1 0.761 on 2,318 evaluation texts. These assess sentiment only. Event/impact rules and shocks remain illustrative.
 
-The sentiment model uses a published financial-tweet dataset with a disjoint held-out evaluation after duplicate-overlap removal. It achieves 82.05% sentiment accuracy and 0.761 macro-F1 on 2,318 evaluation records. Replay events, portfolio exposures and scenario shocks are documented synthetic data. Event/impact extraction is heuristic and no market-prediction accuracy is claimed.
-
-Local setup: Python 3.10+, run python server.py and open http://localhost:8000. The repository includes reproducible training, exported model weights, evaluation statistics, tests, dataset provenance and the five-minute walkthrough.
-
-## Organizer-dependent item
-
-The separate submission-guidelines link was cut off in the supplied screenshots. Verify that document for the precise upload/link format and whether they expect a live session or a recording. No assessment answer has been submitted automatically.
+Replace the video placeholder and README college email before final submission. Save the answer, attach the final deck and complete the official final submission before the communicated deadline.

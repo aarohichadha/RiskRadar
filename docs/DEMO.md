@@ -1,7 +1,7 @@
 # Five-minute live demonstration
 
 Presenter: Aarohi Chadha (`aarohichadha`).
-Dashboard: https://aarohichadha.github.io/RiskRadar/
+Dashboard: https://aarohichadha.github.io/igdtuw-aarohi-chadha-hackathon/
 
 0:00–0:35: Explain that RiskRadar ingests text from two publishers, extracts structured sentiment/event/impact signals, and demonstrates both downstream modules. Identify the learned sentiment model and the heuristic impact estimate.
 
@@ -23,4 +23,4 @@ Run `python server.py` and open http://localhost:8000. No package install is nee
 
 ## Submission format
 
-The brief requests a live demonstration lasting no more than five minutes. A recording is not assumed to replace a live presentation. Check the separate organizer guidelines for the required format.
+The case-study brief limits the live demo to five minutes. The separate submission guidelines additionally require a ten-minute screen recording on YouTube as Unlisted. Use VIDEO-WALKTHROUGH.md for the recording. Selected finalists attend the scheduled live jury pitch and Q&A. No separate booking is needed.

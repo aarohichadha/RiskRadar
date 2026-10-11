@@ -15,7 +15,7 @@ Model: TF-IDF word unigrams/bigrams, minimum document frequency 2, maximum 16,00
 
 Accuracy = 0.8205349439. Macro-F1 = 0.7605247651. These assess sentiment only. They are not independent market-risk validation or a time-separated benchmark.
 
-Raw publisher tweets are not redistributed in this repository. The reproducible script fetches pinned files into an ignored cache directory. Source URLs and SHA-256 checksums are retained in the evaluation report.
+Original pinned publisher CSVs and dataset card are bundled in `data/raw/` under the publisher's stated MIT dataset license. Exact cleaned split JSON files are included. `data/manifest.json` records revision and SHA-256 hashes. Reproduce with `python scripts/train_model.py --cache data/raw`. Original tweet content retains its applicable rights.
 
 ## Live ingestion
 

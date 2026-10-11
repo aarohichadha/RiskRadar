@@ -1,10 +1,12 @@
 RiskRadar
 Author: Aarohi Chadha (aarohichadha)
 
-Source: https://github.com/aarohichadha/RiskRadar
-Dashboard: https://aarohichadha.github.io/RiskRadar/
-Presentation: docs/RiskRadar-Presentation.pptx
-Demo instructions: docs/DEMO.md
+Source: https://github.com/aarohichadha/igdtuw-aarohi-chadha-hackathon
+Dashboard: https://aarohichadha.github.io/igdtuw-aarohi-chadha-hackathon/
+Presentation: docs/presentation.pdf or docs/RiskRadar-Presentation.pptx
+Live demo instructions: docs/DEMO.md
+Required 10-minute video recording: docs/VIDEO-WALKTHROUGH.md
+Before final submission: add your actual college email and Unlisted YouTube video URL to README.md and the form.
 Answer-box draft: docs/SUBMISSION.md
 Dataset and provenance: docs/DATASET.md
 

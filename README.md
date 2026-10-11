@@ -1,104 +1,68 @@
-# RiskRadar
+# RiskRadar - S&P Global & Crisil Campus Hackathon
 
-**Author: Aarohi Chadha (`aarohichadha`)**
+**Candidate Name:** Aarohi Chadha  
+**College Email ID:** PENDING - supply actual college email before submission  
+**College / Campus:** Indira Gandhi Delhi Technical University for Women (IGDTUW)  
+**Demo Video Link:** PENDING - upload the 10-minute screen recording to YouTube as Unlisted  
+**Slide Deck:** [PDF](docs/presentation.pdf) or [PPTX](docs/RiskRadar-Presentation.pptx)  
+**Live Dashboard:** https://aarohichadha.github.io/igdtuw-aarohi-chadha-hackathon/
 
-Financial NLP risk engine with live text ingestion and two downstream applications: sentiment-driven index rebalancing and event-driven portfolio stress testing.
+## 1. Project Overview / Problem Statement & Approach
 
-## Demonstration
+Financial news arrives as unstructured text from different publishers. Analysts must interpret events, connect them with exposures and decide what warrants investigation. RiskRadar demonstrates one processing engine that converts incoming text into structured sentiment, event category and impact estimates, while preserving source metadata and evidence.
 
-- Clean public dashboard: https://aarohichadha.github.io/RiskRadar/
-- Read-only live API and alternative dashboard: https://riskradar-aarohi.goofy-cedar-5467.chatgpt.site
-- Presentation: [seven-slide deck](docs/RiskRadar-Presentation.pptx)
-- Five-minute walkthrough: [DEMO.md](docs/DEMO.md)
-- Dataset and evaluation details: [DATASET.md](docs/DATASET.md)
+BBC Business and Guardian Business RSS provide two live sources. A learned sentiment model outputs a score from -1 to 1. Transparent keyword rules classify events and estimate severity from 1 to 10. The dashboard exposes probabilities, matching rules and original publisher links.
 
-The GitHub Pages dashboard requires no account. It analyzes text locally in the browser and calls the public API for live source ingestion. No API key or credential appears in client code.
+Module A changes normalized weights in a ten-stock mock index using company sentiment. Module B applies simplified asset shocks when impact exceeds seven and shows portfolio value before and after stress. Both modules demonstrate decision support under explicit assumptions.
 
-## Local setup
+## 2. Architecture & Tech Stack
 
-Python 3.10+. No pip installation is needed to run the application.
+![RiskRadar architecture](docs/architecture.png)
+
+- Local: Python 3.10+ standard-library HTTP server, XML parsing and SQLite persistence.
+- Public: HTML/CSS/JavaScript on GitHub Pages, ESM Worker API for live ingestion, no visitor login or client credentials.
+- Training: scikit-learn 1.8.0 and NumPy 2.3.5. Inference uses exported TF-IDF/logistic regression parameters.
+- Data flow: publisher/manual inputs feed the shared NLP engine. Structured signals drive the two modules and JSON exports. Local mode persists signals in SQLite. Public mode holds browser state in memory.
+
+Runtime has no pip dependencies. The training environment is separate. [Technical reference](docs/TECHNICAL.md) provides APIs and formulas.
+
+## 3. Dataset Used
+
+Public dataset: `zeroshot/twitter-financial-news-sentiment`, revision `ccbe24de388e287beb92dd393a335c376b350ac3`. The publisher declares MIT. Original CSVs and the publisher card are in `data/raw/`. Exact cleaned splits, model weights, evaluation statistics and a SHA-256 manifest are in `/data`.
+
+Canonical exact-text deduplication, conflict removal and removal of 55 overlapping validation records yield **9,374 train texts** and **2,318 evaluation texts**. Fixed training settings do not tune on the evaluation split. The split is not temporal or entity-disjoint. Original tweet content retains applicable rights.
+
+`data/replay.json` contains eight explicitly synthetic demo records. `data/portfolio.json` holds a synthetic $10m portfolio: $4m loans, $3m bonds, $2m equity and a $1m derivative. Duration, spread duration, equity beta and signed derivative rate sensitivity are explicit inputs. Event/impact rules and scenario shocks are assumptions, without market calibration.
+
+Live sources: BBC Business RSS and Guardian Business RSS. Source URLs and publication times remain attached to records. Freshness depends on publishers and a 60-second cache. An outage produces an explicit error.
+
+See [dataset provenance](docs/DATASET.md), [manifest](data/manifest.json) and [notices](THIRD_PARTY_NOTICES.md). All fixed input datasets and reproducible demo outputs are included in `/data`.
+
+## 4. Quickstart & Installation
+
+Runtime: **Python 3.10+**, tested on Linux with Python 3.12. Application inference uses only the standard library. Node 20+ is needed only for JS verification. Windows commands are supplied but not tested on Windows.
 
 ```bash
-git clone https://github.com/aarohichadha/RiskRadar.git
-cd RiskRadar
+git clone https://github.com/aarohichadha/igdtuw-aarohi-chadha-hackathon.git
+cd igdtuw-aarohi-chadha-hackathon
+python -m pip install -r requirements.txt
 python server.py
 ```
 
-Open http://localhost:8000. On Windows, `py server.py` also works. Use `--port 8080` if needed.
+Open http://localhost:8000. On Windows, use `py` instead of `python` if needed. For another port, run `python server.py --port 8080`.
 
-Click **Run replay** for a repeatable demonstration or **Fetch live** for BBC/Guardian data. **Start live polling (60s)** fetches both publishers once per minute while the page remains open. Feeds retain source URLs and publication timestamps. A source outage produces an error, without relabeling replay data as live.
+Choose **Run replay**, then select the war/sanctions event. Fetch BBC and Guardian using **Fetch live**. **Start live polling (60s)** refreshes both while the page remains open. **Export JSON** saves signals, stress results and all weight history.
 
-## Requirements mapping
-
-| Case-study requirement | Implementation |
-|---|---|
-| Text from at least two sources | BBC Business RSS and Guardian Business RSS, both verified during development |
-| Sentiment score | Learned TF-IDF/logistic regression model, P(positive) minus P(negative), range -1 to +1 |
-| Event category | Geopolitical, Macroeconomic, Credit Event, Merger/Acquisition, Product Launch, Other |
-| Impact estimate | Transparent severity heuristic, bounded 1–10, with keyword evidence |
-| Structured output | JSON API, signal inspector, JSON export |
-| Module A | Ten mock stock positions, normalized sentiment weights and weight history |
-| Module B | Synthetic loans, bonds, equities and a derivative with event-triggered shocks |
-| Public source repository | This repository |
-| Demonstration <=5 minutes | Public dashboard and timed walkthrough |
-| Presentation <=7 slides | Seven-slide editable PPTX in docs/ |
-
-## Data and measured sentiment performance
-
-The model uses the publisher's MIT-labeled **Twitter Financial News Sentiment** dataset, rather than the initial synthetic training examples. Source revision, data hashes, label mapping, cleaning and split counts are recorded in `data/evaluation.json`.
-
-- 9,374 training records after canonical deduplication and conflict removal.
-- 2,318 evaluation records from the publisher's validation split after overlap removal.
-- Held-out accuracy: **82.05%**.
-- Held-out macro-F1: **0.761**.
-
-These results assess sentiment labels on this split. They do not measure market-risk prediction, event extraction, portfolio returns or generalization to new publishers. The split is not temporal or entity-disjoint. Model posteriors are not calibrated confidence estimates.
-
-The application distributes learned weights in `model.json.gz`. Raw publisher tweets are not bundled. To reproduce training:
+### Reproduce training from included data
 
 ```bash
 python -m venv .venv
-# Activate the environment on your operating system.
+# Activate .venv using your operating system's command.
 python -m pip install -r requirements-training.txt
-python scripts/train_model.py
+python scripts/train_model.py --cache data/raw
 ```
 
-The training script downloads source files at a pinned revision, uses fixed hyperparameters and never fits/tunes on the evaluation split. Normalized text forms are used to remove exact duplicate overlap. Near-duplicate stories can still exist.
-
-## Architecture
-
-Local: publisher RSS -> parsing/cleanup -> learned sentiment + event/impact rules -> SQLite -> JSON API -> dashboard.
-
-Public: embedded read-only Worker API -> RSS publishers -> same JavaScript inference. Browser state stays in memory. The GitHub Pages dashboard calls the Worker through a narrow CORS allowlist.
-
-The public API does not store visitor text or require sign-in. The local API persists analyzed signals in SQLite, with source+text duplicate suppression. Both modes have request-size limits and explicit source errors. Feed responses cache for 60 seconds per process/isolate. Cached records can therefore be up to 60 seconds old plus the publisher's own delay.
-
-## JSON API
-
-- `GET /api/health`
-- `POST /api/analyze`: `{"rows":[{"text":"Apple reports strong profit growth","source":"manual","company":"AAPL"}]}`
-- `POST /api/ingest`: `{"source":"bbc"}` or `{"source":"guardian"}`
-- `POST /api/stress`: `{"signal":{"impact_score":10,"event_classification":"Geopolitical"},"threshold":7,"multiplier":1}`. Optional `portfolio`.
-- Local only: `GET /api/signals`, `POST /api/rebalance`.
-- Public only: `GET /api/metrics`.
-
-The local server binds to 127.0.0.1 and is a demo server, not a hardened public web server. An optional local SEC connector remains available with `SEC_CONTACT_EMAIL`, but BBC and Guardian satisfy the two-source requirement.
-
-## Portfolio contracts
-
-The supplied sample transaction file was not provided, and the case study permits other data sources. This project uses a self-authored **synthetic portfolio**, documented in `data/portfolio.json`. It contains $4m loans, $3m bonds, $2m equities and a $1m derivative carrying signed rate sensitivity.
-
-Stress triggers when impact is **strictly greater than** the threshold, default 7. Default geopolitical shocks: equity -10%, rates +2 percentage points and credit spreads +1.5 percentage points. Each simulation starts from the original portfolio.
-
-First-order asset change:
-
-`value * (equity_beta * equity_shock - duration * rate_shock - spread_duration * spread_shock) + rate_sensitivity * rate_shock`
-
-The synthetic geopolitical scenario produces a $1.02m loss, reducing value from $10m to $8.98m. Shocks and exposures are illustrative and are not calibrated forecasts. Derivative sensitivity is currency per unit change in rate. Positive sentiment does not reverse an adverse stress scenario.
-
-Module A uses ten mock positions with equal starting weights. Raw weight `1 + 0.5 * latest company sentiment`, then normalize to sum to 100%. Basic company aliases/ticker tags support routing. GLOBAL events do not change company positions. The chart follows AAPL, MSFT and TSLA, with every position included in exported history. This is a mock index, without price-based backtesting or transaction costs.
-
-## Verification
+### Verification
 
 ```bash
 python -m unittest discover -s tests -v
@@ -108,19 +72,29 @@ python scripts/build_worker.py
 node tests/worker-api.mjs
 ```
 
-`tests/integration.py` runs against the local server and checks API behavior, persistence, duplicate suppression and Python/browser parity. It expects a clean demonstration database. Browser test execution creates its parity fixture.
+With `python server.py` running, use `python tests/integration.py` in another terminal. Tests check calculation/API behavior, not investment performance.
 
-Tests validate calculation and API behavior. Held-out sentiment metrics are separately recorded in `data/evaluation.json`.
+## 5. Key Results & Domain Impact
 
-## Limitations
+- Held-out sentiment accuracy **82.05%**, macro-F1 **0.761** on 2,318 texts. These measure sentiment labels, not event/impact accuracy or portfolio returns.
+- Synthetic geopolitical stress: **$10m before, $8.98m after**, loss **$1.02m (10.2%)**. Assumed equity shock -10%, rate shock +2 percentage points, spread shock +1.5 percentage points.
+- Mock index weights normalize to 100%. Replay gives AAPL 13.85%, MSFT 13.61% and JPM 5.07%, with every position in exported history.
+- Both live publishers, JSON exports, nine Python unit tests, API integration and Python/JavaScript replay parity have been checked.
 
-Keyword event classification and impact scoring can miss negation, ambiguity and mixed events. Basic aliases do not resolve arbitrary entities. Tweet-trained sentiment can shift on long news articles. The public browser session resets on reload unless you export its results. Exposure valuation omits nonlinear option effects, convexity, recovery assumptions and liquidity constraints. No live trading is implemented.
+The common signal format helps risk analysts inspect incoming news consistently. Asset-level scenario losses connect event assumptions to portfolio exposures. The mock index shows how another consumer uses sentiment. No measured analyst time saving, trading outperformance or production risk-model validity is claimed.
 
-## Sources and attribution
+### Limitations & Next Steps
 
-- Dataset publisher: https://huggingface.co/datasets/zeroshot/twitter-financial-news-sentiment
-- BBC RSS: https://support.bbc.co.uk/platform/feeds/NewsFeeds.htm
-- Guardian RSS: https://www.theguardian.com/help/feeds
-- Assignment: supplied case-study screenshots.
+Rules can miss negation and mixed events. Simple aliases do not resolve arbitrary entities. Tweet-trained sentiment may shift on news articles and probabilities are not calibrated. Portfolio valuation omits nonlinear options, convexity and liquidity. Next steps are temporal sentiment evaluation and market calibration of severity and shocks.
 
-Live publisher content remains attributed and linked to its original source. This application is a case-study demonstration. See `THIRD_PARTY_NOTICES.md` for data attribution and usage context.
+### Recording & Submission
+
+Use the [ten-minute recording script](docs/VIDEO-WALKTHROUGH.md) and [five-minute live pitch](docs/DEMO.md). The guidelines require an **Unlisted YouTube screen recording**. The dashboard link does not replace it. Replace both PENDING fields above and test the video without sign-in before submitting.
+
+### AI Assistance Disclosure
+
+AI assistance helped with implementation, documentation, testing and presentation preparation. Sources, metrics and limitations are documented. The candidate should review the work and explain its design and assumptions during the individual jury pitch.
+
+### License
+
+Project code: [MIT](LICENSE), copyright Aarohi Chadha. Third-party data and publisher content retain their applicable rights and attribution.

@@ -5,7 +5,7 @@
 Dataset publisher: zeroshot.
 https://huggingface.co/datasets/zeroshot/twitter-financial-news-sentiment
 Revision: ccbe24de388e287beb92dd393a335c376b350ac3.
-The publisher dataset card states that version 1.0.0 is released under the MIT License. Its corpus consists of finance-related tweets collected using the Twitter API. The repository distributes an exported fitted model and evaluation statistics, not copies of the raw tweet corpus. Original tweet content remains subject to its applicable rights and platform terms.
+The publisher dataset card states that version 1.0.0 is released under the MIT License. Its corpus consists of finance-related tweets collected using the Twitter API. The repository includes original pinned CSV files, the publisher dataset card, cleaned splits, model weights and evaluation statistics. The publisher license declaration is preserved in data/raw/README.md. Original tweet content remains subject to its applicable rights and platform terms.
 
 ## Live news feeds
 
