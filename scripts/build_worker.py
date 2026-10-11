@@ -9,6 +9,8 @@ for name in ['index.html','app.js','engine.js','model.json.gz','portfolio.json',
 engine=(ROOT/'dist/engine.js').read_text().replace('export const ','const ').replace('export function ','function ')
 code='const STATIC_ASSETS='+json.dumps(assets,separators=(',',':'))+';\n'+engine+'\n'+(ROOT/'worker/api.js').read_text()
 p=ROOT/'dist/server/index.js';p.parent.mkdir(parents=True,exist_ok=True);p.write_text(code)
-manifest=json.loads((ROOT/'.openai/hosting.json').read_text());manifest.pop('static',None)
+manifest_path=ROOT/'.openai/hosting.json'
+manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+manifest.pop('static',None)
 (ROOT/'dist/.openai').mkdir(exist_ok=True);(ROOT/'dist/.openai/hosting.json').write_text(json.dumps(manifest,indent=2))
 print('Bundled Worker:',len(code),'bytes')
