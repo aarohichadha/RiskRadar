@@ -1,0 +1,38 @@
+[
+  {
+    "id": "corporate-loan",
+    "asset_type": "loan",
+    "value": 4000000,
+    "duration": 2,
+    "spread_duration": 2,
+    "equity_beta": 0,
+    "rate_sensitivity": 0
+  },
+  {
+    "id": "corporate-bond",
+    "asset_type": "bond",
+    "value": 3000000,
+    "duration": 5,
+    "spread_duration": 4,
+    "equity_beta": 0,
+    "rate_sensitivity": 0
+  },
+  {
+    "id": "equity-basket",
+    "asset_type": "equity",
+    "value": 2000000,
+    "duration": 0,
+    "spread_duration": 0,
+    "equity_beta": 1,
+    "rate_sensitivity": 0
+  },
+  {
+    "id": "rate-swap",
+    "asset_type": "derivative",
+    "value": 1000000,
+    "duration": 0,
+    "spread_duration": 0,
+    "equity_beta": 0,
+    "rate_sensitivity": -3000000
+  }
+]

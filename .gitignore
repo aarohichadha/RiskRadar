@@ -1,0 +1,7 @@
+__pycache__/
+*.sqlite3
+.env
+.codex-finalizer/
+node_modules/
+.data-cache/
+training-cache/

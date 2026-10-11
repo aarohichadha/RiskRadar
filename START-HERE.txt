@@ -1,0 +1,18 @@
+RiskRadar
+Author: Aarohi Chadha (aarohichadha)
+
+Source: https://github.com/aarohichadha/RiskRadar
+Dashboard: https://aarohichadha.github.io/RiskRadar/
+Presentation: docs/RiskRadar-Presentation.pptx
+Demo instructions: docs/DEMO.md
+Answer-box draft: docs/SUBMISSION.md
+Dataset and provenance: docs/DATASET.md
+
+Local setup:
+1. Open a terminal in the project folder.
+2. Run: python server.py
+3. Open http://localhost:8000
+4. Run replay, fetch both live publishers, inspect stress results and export JSON.
+
+Python 3.10+ required. No pip install is needed for the application.
+Sentiment uses an evaluated learned model. Event/impact estimates and financial scenarios remain illustrative.

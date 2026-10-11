@@ -1,0 +1,95 @@
+{
+  "dataset": "zeroshot/twitter-financial-news-sentiment",
+  "revision": "ccbe24de388e287beb92dd393a335c376b350ac3",
+  "license": "MIT (publisher dataset card)",
+  "source": "https://huggingface.co/datasets/zeroshot/twitter-financial-news-sentiment/resolve/ccbe24de388e287beb92dd393a335c376b350ac3/",
+  "raw_train_count": 9543,
+  "raw_validation_count": 2388,
+  "train_count": 9374,
+  "evaluation_count": 2318,
+  "conflicting_train_groups_removed": 10,
+  "conflicting_evaluation_groups_removed": 0,
+  "evaluation_overlap_removed": 55,
+  "train_labels": {
+    "negative": 1423,
+    "positive": 1891,
+    "neutral": 6060
+  },
+  "evaluation_labels": {
+    "negative": 332,
+    "positive": 469,
+    "neutral": 1517
+  },
+  "accuracy": 0.82053494391717,
+  "macro_f1": 0.7605247651302703,
+  "classification_report": {
+    "negative": {
+      "precision": 0.6436781609195402,
+      "recall": 0.6746987951807228,
+      "f1-score": 0.6588235294117647,
+      "support": 332.0
+    },
+    "neutral": {
+      "precision": 0.8956639566395664,
+      "recall": 0.8714568226763348,
+      "f1-score": 0.8833945873705312,
+      "support": 1517.0
+    },
+    "positive": {
+      "precision": 0.7206477732793523,
+      "recall": 0.7590618336886994,
+      "f1-score": 0.7393561786085151,
+      "support": 469.0
+    },
+    "accuracy": 0.82053494391717,
+    "macro avg": {
+      "precision": 0.7533299636128197,
+      "recall": 0.768405817181919,
+      "f1-score": 0.7605247651302703,
+      "support": 2318.0
+    },
+    "weighted avg": {
+      "precision": 0.8241618538893555,
+      "recall": 0.82053494391717,
+      "f1-score": 0.8220867336381343,
+      "support": 2318.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      224,
+      74,
+      34
+    ],
+    [
+      91,
+      1322,
+      104
+    ],
+    [
+      33,
+      80,
+      356
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "method": "TF-IDF unigrams/bigrams + balanced multinomial logistic regression",
+  "hyperparameters": {
+    "C": 4,
+    "min_df": 2,
+    "max_features": 16000,
+    "ngram_range": [
+      1,
+      2
+    ]
+  },
+  "evaluation_design": "Publisher validation split, canonical exact-text deduplication, conflicts removed and train/evaluation overlap removed. No tuning on evaluation split. Not a temporal or entity-disjoint evaluation.",
+  "source_sha256": {
+    "sent_train.csv": "71aa99d0d37feced03c999ec23b5b25302c92f39d69b6acb0a37aa076c5420e8",
+    "sent_valid.csv": "31ea8274c98b52212daa68f2fb962811bf1913c1efe51b99765c8e2311806de6"
+  }
+}

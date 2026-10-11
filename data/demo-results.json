@@ -1,0 +1,366 @@
+{
+  "signals": [
+    {
+      "text": "Apple reports strong profit growth and record revenue after successful product launch",
+      "source": "news",
+      "company": "AAPL",
+      "published_at": "2026-01-15T10:00:00Z",
+      "synthetic": true,
+      "signal_id": "a1c16524b7dbe222",
+      "sentiment_score": 0.9661,
+      "sentiment_label": "positive",
+      "probabilities": {
+        "negative": 0.016029141465745973,
+        "neutral": 0.001860397870372099,
+        "positive": 0.982110460663882
+      },
+      "event_classification": "Product Launch",
+      "impact_score": 3,
+      "evidence": {
+        "event_keywords": [
+          "product",
+          "launch"
+        ],
+        "severity_keywords": []
+      },
+      "model": "TF-IDF + logistic regression",
+      "impact_method": "keyword heuristic",
+      "confidence_calibrated": false,
+      "low_confidence": false,
+      "matched_features": 13
+    },
+    {
+      "text": "Microsoft wins contract and raises outlook. Strong earnings beat expectations",
+      "source": "social",
+      "company": "MSFT",
+      "published_at": "2026-01-15T10:01:00Z",
+      "synthetic": true,
+      "signal_id": "9cd403aa96a84c9f",
+      "sentiment_score": 0.9153,
+      "sentiment_label": "positive",
+      "probabilities": {
+        "negative": 0.01881117946842672,
+        "neutral": 0.047084907022091636,
+        "positive": 0.9341039135094816
+      },
+      "event_classification": "Other",
+      "impact_score": 1,
+      "evidence": {
+        "event_keywords": [],
+        "severity_keywords": []
+      },
+      "model": "TF-IDF + logistic regression",
+      "impact_method": "keyword heuristic",
+      "confidence_calibrated": false,
+      "low_confidence": false,
+      "matched_features": 13
+    },
+    {
+      "text": "War escalation and sanctions disrupt global supply chains causing a severe crisis",
+      "source": "news",
+      "company": "GLOBAL",
+      "published_at": "2026-01-15T10:02:00Z",
+      "synthetic": true,
+      "signal_id": "256b69be7d2158da",
+      "sentiment_score": -0.519,
+      "sentiment_label": "negative",
+      "probabilities": {
+        "negative": 0.5633185129098665,
+        "neutral": 0.39234364652702336,
+        "positive": 0.044337840563110194
+      },
+      "event_classification": "Geopolitical",
+      "impact_score": 9,
+      "evidence": {
+        "event_keywords": [
+          "war",
+          "sanctions"
+        ],
+        "severity_keywords": [
+          "war",
+          "crisis",
+          "sanctions"
+        ]
+      },
+      "model": "TF-IDF + logistic regression",
+      "impact_method": "keyword heuristic",
+      "confidence_calibrated": false,
+      "low_confidence": false,
+      "matched_features": 11
+    },
+    {
+      "text": "Debt default triggers bankruptcy and liquidity crisis with major losses",
+      "source": "social",
+      "company": "JPM",
+      "published_at": "2026-01-15T10:03:00Z",
+      "synthetic": true,
+      "signal_id": "a6855a9cdcd246cb",
+      "sentiment_score": -0.9146,
+      "sentiment_label": "negative",
+      "probabilities": {
+        "negative": 0.9199759177711311,
+        "neutral": 0.07469730744189627,
+        "positive": 0.005326774786972543
+      },
+      "event_classification": "Credit Event",
+      "impact_score": 10,
+      "evidence": {
+        "event_keywords": [
+          "default",
+          "bankruptcy",
+          "liquidity",
+          "debt"
+        ],
+        "severity_keywords": [
+          "default",
+          "bankruptcy",
+          "crisis"
+        ]
+      },
+      "model": "TF-IDF + logistic regression",
+      "impact_method": "keyword heuristic",
+      "confidence_calibrated": false,
+      "low_confidence": false,
+      "matched_features": 9
+    },
+    {
+      "text": "Interest rate hike and inflation threaten economic recession",
+      "source": "news",
+      "company": "GLOBAL",
+      "published_at": "2026-01-15T10:04:00Z",
+      "synthetic": true,
+      "signal_id": "c83cf8d1084a7797",
+      "sentiment_score": -0.7683,
+      "sentiment_label": "negative",
+      "probabilities": {
+        "negative": 0.7999005233991199,
+        "neutral": 0.16845058279233563,
+        "positive": 0.031648893808544465
+      },
+      "event_classification": "Macroeconomic",
+      "impact_score": 6,
+      "evidence": {
+        "event_keywords": [
+          "inflation",
+          "interest rate",
+          "recession"
+        ],
+        "severity_keywords": [
+          "recession"
+        ]
+      },
+      "model": "TF-IDF + logistic regression",
+      "impact_method": "keyword heuristic",
+      "confidence_calibrated": false,
+      "low_confidence": false,
+      "matched_features": 9
+    },
+    {
+      "text": "Tesla product recall and regulatory investigation hurt sales",
+      "source": "social",
+      "company": "TSLA",
+      "published_at": "2026-01-15T10:05:00Z",
+      "synthetic": true,
+      "signal_id": "64c7fb5b4a5e0921",
+      "sentiment_score": -0.3304,
+      "sentiment_label": "negative",
+      "probabilities": {
+        "negative": 0.4732178897100537,
+        "neutral": 0.3839480075562205,
+        "positive": 0.14283410273372588
+      },
+      "event_classification": "Product Launch",
+      "impact_score": 3,
+      "evidence": {
+        "event_keywords": [
+          "product",
+          "recall"
+        ],
+        "severity_keywords": []
+      },
+      "model": "TF-IDF + logistic regression",
+      "impact_method": "keyword heuristic",
+      "confidence_calibrated": false,
+      "low_confidence": true,
+      "matched_features": 8
+    },
+    {
+      "text": "Nvidia reports record revenue and profitable expansion",
+      "source": "news",
+      "company": "NVDA",
+      "published_at": "2026-01-15T10:06:00Z",
+      "synthetic": true,
+      "signal_id": "a458f632d25ace9f",
+      "sentiment_score": 0.7262,
+      "sentiment_label": "positive",
+      "probabilities": {
+        "negative": 0.03207063371131027,
+        "neutral": 0.2096926940620335,
+        "positive": 0.7582366722266562
+      },
+      "event_classification": "Other",
+      "impact_score": 1,
+      "evidence": {
+        "event_keywords": [],
+        "severity_keywords": []
+      },
+      "model": "TF-IDF + logistic regression",
+      "impact_method": "keyword heuristic",
+      "confidence_calibrated": false,
+      "low_confidence": false,
+      "matched_features": 7
+    },
+    {
+      "text": "Amazon schedules annual shareholder conference",
+      "source": "social",
+      "company": "AMZN",
+      "published_at": "2026-01-15T10:07:00Z",
+      "synthetic": true,
+      "signal_id": "99d0ddc380e296ba",
+      "sentiment_score": 0.0578,
+      "sentiment_label": "neutral",
+      "probabilities": {
+        "negative": 0.01232161200029113,
+        "neutral": 0.9175208792723235,
+        "positive": 0.07015750872738542
+      },
+      "event_classification": "Other",
+      "impact_score": 1,
+      "evidence": {
+        "event_keywords": [],
+        "severity_keywords": []
+      },
+      "model": "TF-IDF + logistic regression",
+      "impact_method": "keyword heuristic",
+      "confidence_calibrated": false,
+      "low_confidence": false,
+      "matched_features": 5
+    }
+  ],
+  "stress": {
+    "triggered": true,
+    "threshold": 7,
+    "shock": {
+      "equity": -0.1,
+      "rates": 0.02,
+      "spread": 0.015
+    },
+    "assets": [
+      {
+        "id": "corporate-loan",
+        "asset_type": "loan",
+        "value": 4000000,
+        "duration": 2,
+        "spread_duration": 2,
+        "equity_beta": 0,
+        "rate_sensitivity": 0,
+        "before": 4000000.0,
+        "after": 3720000.0,
+        "change": -280000.0
+      },
+      {
+        "id": "corporate-bond",
+        "asset_type": "bond",
+        "value": 3000000,
+        "duration": 5,
+        "spread_duration": 4,
+        "equity_beta": 0,
+        "rate_sensitivity": 0,
+        "before": 3000000.0,
+        "after": 2520000.0,
+        "change": -480000.0
+      },
+      {
+        "id": "equity-basket",
+        "asset_type": "equity",
+        "value": 2000000,
+        "duration": 0,
+        "spread_duration": 0,
+        "equity_beta": 1,
+        "rate_sensitivity": 0,
+        "before": 2000000.0,
+        "after": 1800000.0,
+        "change": -200000.0
+      },
+      {
+        "id": "rate-swap",
+        "asset_type": "derivative",
+        "value": 1000000,
+        "duration": 0,
+        "spread_duration": 0,
+        "equity_beta": 0,
+        "rate_sensitivity": -3000000,
+        "before": 1000000.0,
+        "after": 940000.0,
+        "change": -60000.0
+      }
+    ],
+    "before": 10000000.0,
+    "after": 8980000.0,
+    "loss": 1020000.0,
+    "loss_pct": 10.2,
+    "assumption": "Illustrative adverse scenario, independent of sentiment direction. Derivative sensitivity is currency per unit rate change."
+  },
+  "weights": [
+    {
+      "ticker": "AAPL",
+      "base_weight": 0.1,
+      "weight": 0.1384708035330806,
+      "sentiment": 0.9661
+    },
+    {
+      "ticker": "MSFT",
+      "base_weight": 0.1,
+      "weight": 0.13609923250732947,
+      "sentiment": 0.9153
+    },
+    {
+      "ticker": "NVDA",
+      "base_weight": 0.1,
+      "weight": 0.12727119941737783,
+      "sentiment": 0.7262
+    },
+    {
+      "ticker": "AMZN",
+      "base_weight": 0.1,
+      "weight": 0.09606730033052603,
+      "sentiment": 0.0578
+    },
+    {
+      "ticker": "GOOGL",
+      "base_weight": 0.1,
+      "weight": 0.09336893802169893,
+      "sentiment": 0
+    },
+    {
+      "ticker": "META",
+      "base_weight": 0.1,
+      "weight": 0.09336893802169893,
+      "sentiment": 0
+    },
+    {
+      "ticker": "TSLA",
+      "base_weight": 0.1,
+      "weight": 0.07794438946051427,
+      "sentiment": -0.3304
+    },
+    {
+      "ticker": "JPM",
+      "base_weight": 0.1,
+      "weight": 0.05067132266437601,
+      "sentiment": -0.9146
+    },
+    {
+      "ticker": "V",
+      "base_weight": 0.1,
+      "weight": 0.09336893802169893,
+      "sentiment": 0
+    },
+    {
+      "ticker": "WMT",
+      "base_weight": 0.1,
+      "weight": 0.09336893802169893,
+      "sentiment": 0
+    }
+  ]
+}

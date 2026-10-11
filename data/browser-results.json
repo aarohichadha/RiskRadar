@@ -1,0 +1,230 @@
+[
+  {
+    "text": "Apple reports strong profit growth and record revenue after successful product launch",
+    "source": "news",
+    "company": "AAPL",
+    "published_at": "2026-01-15T10:00:00Z",
+    "synthetic": true,
+    "sentiment_score": 0.9661,
+    "sentiment_label": "positive",
+    "probabilities": {
+      "negative": 0.016029141465745973,
+      "neutral": 0.0018603978703721007,
+      "positive": 0.982110460663882
+    },
+    "event_classification": "Product Launch",
+    "impact_score": 3,
+    "evidence": {
+      "event_keywords": [
+        "product",
+        "launch"
+      ],
+      "severity_keywords": []
+    },
+    "model": "TF-IDF + logistic regression",
+    "impact_method": "keyword heuristic",
+    "confidence_calibrated": false,
+    "low_confidence": false,
+    "matched_features": 13
+  },
+  {
+    "text": "Microsoft wins contract and raises outlook. Strong earnings beat expectations",
+    "source": "social",
+    "company": "MSFT",
+    "published_at": "2026-01-15T10:01:00Z",
+    "synthetic": true,
+    "sentiment_score": 0.9153,
+    "sentiment_label": "positive",
+    "probabilities": {
+      "negative": 0.018811179468426708,
+      "neutral": 0.047084907022091636,
+      "positive": 0.9341039135094816
+    },
+    "event_classification": "Other",
+    "impact_score": 1,
+    "evidence": {
+      "event_keywords": [],
+      "severity_keywords": []
+    },
+    "model": "TF-IDF + logistic regression",
+    "impact_method": "keyword heuristic",
+    "confidence_calibrated": false,
+    "low_confidence": false,
+    "matched_features": 13
+  },
+  {
+    "text": "War escalation and sanctions disrupt global supply chains causing a severe crisis",
+    "source": "news",
+    "company": "GLOBAL",
+    "published_at": "2026-01-15T10:02:00Z",
+    "synthetic": true,
+    "sentiment_score": -0.519,
+    "sentiment_label": "negative",
+    "probabilities": {
+      "negative": 0.5633185129098665,
+      "neutral": 0.39234364652702336,
+      "positive": 0.044337840563110194
+    },
+    "event_classification": "Geopolitical",
+    "impact_score": 9,
+    "evidence": {
+      "event_keywords": [
+        "war",
+        "sanctions"
+      ],
+      "severity_keywords": [
+        "war",
+        "crisis",
+        "sanctions"
+      ]
+    },
+    "model": "TF-IDF + logistic regression",
+    "impact_method": "keyword heuristic",
+    "confidence_calibrated": false,
+    "low_confidence": false,
+    "matched_features": 11
+  },
+  {
+    "text": "Debt default triggers bankruptcy and liquidity crisis with major losses",
+    "source": "social",
+    "company": "JPM",
+    "published_at": "2026-01-15T10:03:00Z",
+    "synthetic": true,
+    "sentiment_score": -0.9146,
+    "sentiment_label": "negative",
+    "probabilities": {
+      "negative": 0.9199759177711313,
+      "neutral": 0.07469730744189626,
+      "positive": 0.0053267747869725395
+    },
+    "event_classification": "Credit Event",
+    "impact_score": 10,
+    "evidence": {
+      "event_keywords": [
+        "default",
+        "bankruptcy",
+        "liquidity",
+        "debt"
+      ],
+      "severity_keywords": [
+        "default",
+        "bankruptcy",
+        "crisis"
+      ]
+    },
+    "model": "TF-IDF + logistic regression",
+    "impact_method": "keyword heuristic",
+    "confidence_calibrated": false,
+    "low_confidence": false,
+    "matched_features": 9
+  },
+  {
+    "text": "Interest rate hike and inflation threaten economic recession",
+    "source": "news",
+    "company": "GLOBAL",
+    "published_at": "2026-01-15T10:04:00Z",
+    "synthetic": true,
+    "sentiment_score": -0.7683,
+    "sentiment_label": "negative",
+    "probabilities": {
+      "negative": 0.7999005233991199,
+      "neutral": 0.16845058279233568,
+      "positive": 0.03164889380854448
+    },
+    "event_classification": "Macroeconomic",
+    "impact_score": 6,
+    "evidence": {
+      "event_keywords": [
+        "inflation",
+        "interest rate",
+        "recession"
+      ],
+      "severity_keywords": [
+        "recession"
+      ]
+    },
+    "model": "TF-IDF + logistic regression",
+    "impact_method": "keyword heuristic",
+    "confidence_calibrated": false,
+    "low_confidence": false,
+    "matched_features": 9
+  },
+  {
+    "text": "Tesla product recall and regulatory investigation hurt sales",
+    "source": "social",
+    "company": "TSLA",
+    "published_at": "2026-01-15T10:05:00Z",
+    "synthetic": true,
+    "sentiment_score": -0.3304,
+    "sentiment_label": "negative",
+    "probabilities": {
+      "negative": 0.4732178897100537,
+      "neutral": 0.3839480075562205,
+      "positive": 0.14283410273372588
+    },
+    "event_classification": "Product Launch",
+    "impact_score": 3,
+    "evidence": {
+      "event_keywords": [
+        "product",
+        "recall"
+      ],
+      "severity_keywords": []
+    },
+    "model": "TF-IDF + logistic regression",
+    "impact_method": "keyword heuristic",
+    "confidence_calibrated": false,
+    "low_confidence": true,
+    "matched_features": 8
+  },
+  {
+    "text": "Nvidia reports record revenue and profitable expansion",
+    "source": "news",
+    "company": "NVDA",
+    "published_at": "2026-01-15T10:06:00Z",
+    "synthetic": true,
+    "sentiment_score": 0.7262,
+    "sentiment_label": "positive",
+    "probabilities": {
+      "negative": 0.03207063371131026,
+      "neutral": 0.2096926940620335,
+      "positive": 0.7582366722266562
+    },
+    "event_classification": "Other",
+    "impact_score": 1,
+    "evidence": {
+      "event_keywords": [],
+      "severity_keywords": []
+    },
+    "model": "TF-IDF + logistic regression",
+    "impact_method": "keyword heuristic",
+    "confidence_calibrated": false,
+    "low_confidence": false,
+    "matched_features": 7
+  },
+  {
+    "text": "Amazon schedules annual shareholder conference",
+    "source": "social",
+    "company": "AMZN",
+    "published_at": "2026-01-15T10:07:00Z",
+    "synthetic": true,
+    "sentiment_score": 0.0578,
+    "sentiment_label": "neutral",
+    "probabilities": {
+      "negative": 0.01232161200029113,
+      "neutral": 0.9175208792723235,
+      "positive": 0.07015750872738541
+    },
+    "event_classification": "Other",
+    "impact_score": 1,
+    "evidence": {
+      "event_keywords": [],
+      "severity_keywords": []
+    },
+    "model": "TF-IDF + logistic regression",
+    "impact_method": "keyword heuristic",
+    "confidence_calibrated": false,
+    "low_confidence": false,
+    "matched_features": 5
+  }
+]

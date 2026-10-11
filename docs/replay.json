@@ -1,0 +1,58 @@
+[
+  {
+    "text": "Apple reports strong profit growth and record revenue after successful product launch",
+    "source": "news",
+    "company": "AAPL",
+    "published_at": "2026-01-15T10:00:00Z",
+    "synthetic": true
+  },
+  {
+    "text": "Microsoft wins contract and raises outlook. Strong earnings beat expectations",
+    "source": "social",
+    "company": "MSFT",
+    "published_at": "2026-01-15T10:01:00Z",
+    "synthetic": true
+  },
+  {
+    "text": "War escalation and sanctions disrupt global supply chains causing a severe crisis",
+    "source": "news",
+    "company": "GLOBAL",
+    "published_at": "2026-01-15T10:02:00Z",
+    "synthetic": true
+  },
+  {
+    "text": "Debt default triggers bankruptcy and liquidity crisis with major losses",
+    "source": "social",
+    "company": "JPM",
+    "published_at": "2026-01-15T10:03:00Z",
+    "synthetic": true
+  },
+  {
+    "text": "Interest rate hike and inflation threaten economic recession",
+    "source": "news",
+    "company": "GLOBAL",
+    "published_at": "2026-01-15T10:04:00Z",
+    "synthetic": true
+  },
+  {
+    "text": "Tesla product recall and regulatory investigation hurt sales",
+    "source": "social",
+    "company": "TSLA",
+    "published_at": "2026-01-15T10:05:00Z",
+    "synthetic": true
+  },
+  {
+    "text": "Nvidia reports record revenue and profitable expansion",
+    "source": "news",
+    "company": "NVDA",
+    "published_at": "2026-01-15T10:06:00Z",
+    "synthetic": true
+  },
+  {
+    "text": "Amazon schedules annual shareholder conference",
+    "source": "social",
+    "company": "AMZN",
+    "published_at": "2026-01-15T10:07:00Z",
+    "synthetic": true
+  }
+]

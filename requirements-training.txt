@@ -1,0 +1,3 @@
+# Training reproduction only. No packages needed for application inference.
+scikit-learn==1.8.0
+numpy==2.3.5
